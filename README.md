@@ -26,3 +26,14 @@ go to folder `src`
 source create_cSBM_dataset.sh
 ```
         
+# Cite us at
+```latex
+@inproceedings{
+chien2021adaptive,
+title={Adaptive Universal Generalized PageRank Graph Neural Network},
+author={Eli Chien and Jianhao Peng and Pan Li and Olgica Milenkovic},
+booktitle={International Conference on Learning Representations},
+year={2021},
+url={https://openreview.net/forum?id=n6jl7fLxrP}
+```
+}
