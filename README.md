@@ -5,7 +5,7 @@ This is the source code for our ICLR2021 paper: [Adaptive Universal Generalized 
 # Requirement:
 ```
 pytorch
-pytorch-geometry
+pytorch-geometric
 numpy
 ```
 
