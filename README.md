@@ -27,7 +27,7 @@ source create_cSBM_dataset.sh
 ```
         
 # Citation
-Please cite our paper (and the respective papers of the methods used) if you use this code in your own work:
+Please cite our paper if you use this code in your own work:
 ```latex
 @inproceedings{
 chien2021adaptive,
