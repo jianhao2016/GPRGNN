@@ -2,7 +2,13 @@
 
 This is the source code for our ICLR2021 paper: [Adaptive Universal Generalized PageRank Graph Neural Network](https://openreview.net/forum?id=n6jl7fLxrP).
 
-![workflow](https://github.com/jianhao2016/GPRGNN/blob/master/figs/GP-GNN.pdf)
+
+<p align="center">
+  <img src="https://github.com/jianhao2016/GPRGNN/blob/master/figs/workflow.png" width="600">
+</p>
+<p align="center">
+  <img src="https://github.com/jianhao2016/GPRGNN/blob/master/figs/Different_gammas.png" width="600">
+</p>
 
 # Requirement:
 ```
