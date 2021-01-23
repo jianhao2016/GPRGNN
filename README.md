@@ -6,6 +6,13 @@ This is the source code for our ICLR2021 paper: [Adaptive Universal Generalized 
 <p align="center">
   <img src="https://github.com/jianhao2016/GPRGNN/blob/master/figs/workflow.png" width="600">
 </p>
+
+Hidden state feature extraction is performed by a neural networks using individual node features propagated via GPR. Note that both the GPR weights <img src="https://render.githubusercontent.com/render/math?math=\gamma_k"> and parameter set <img src="https://render.githubusercontent.com/render/math?math=\{\theta\}"> of the neural network are learned simultaneously in an end-to-end fashion (as indicated in red).
+
+
+The learnt GPR weights of the GPR-GNN on real world datasets. Cora is homophilic while Texas is heterophilic (Here, H stands for the level of homophily defined in the main text, Equation (1)). An interesting trend may be observed: For the heterophilic case the weights alternate from positive to negative with dampening amplitudes. The shaded region corresponds to a 95% confidence interval.
+
+
 <p align="center">
   <img src="https://github.com/jianhao2016/GPRGNN/blob/master/figs/Different_gammas.png" width="600">
 </p>
