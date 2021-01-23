@@ -2,6 +2,8 @@
 
 This is the source code for our ICLR2021 paper: [Adaptive Universal Generalized PageRank Graph Neural Network](https://openreview.net/forum?id=n6jl7fLxrP).
 
+![workflow](https://github.com/jianhao2016/GPRGNN/blob/master/figs/GP-GNN.pdf)
+
 # Requirement:
 ```
 pytorch
