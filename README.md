@@ -40,6 +40,7 @@ go to folder `src`
 ```
 source create_cSBM_dataset.sh
 ```
+ The total size of cSBM datasets we used is over 1GB hence they are not included in this repository, but we do have a sample of the dataset in `data/cSBM_demo`. We reccommend you to regenerate these datasets using the format of above script, start its name with `'cSBM_data'` and change the parameter <img src="https://render.githubusercontent.com/render/math?math=\phi"> to what we choose in section A.10 in Appendix of our paper.
  
 # Repreduce results in Table 2:
 
