@@ -101,7 +101,7 @@ def parameterized_Lambda_and_mu(theta, p, n, epsilon=0.1):
     '''
     from math import pi
     gamma = n / p
-    assert (theta >= 0) and (theta <= 1)
+    assert (theta >= -1) and (theta <= 1)
     Lambda = np.sqrt(1 + epsilon) * np.sin(theta * pi / 2)
     mu = np.sqrt(gamma * (1 + epsilon)) * np.cos(theta * pi / 2)
     return Lambda, mu
