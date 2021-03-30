@@ -47,7 +47,12 @@ source create_cSBM_dataset.sh
 To reproduce the results in Table 2 of [our paper](https://openreview.net/forum?id=n6jl7fLxrP) you need to first perform hyperparameter tuning. 
 For details of optimization of all models, please refer to section A.9 in Appendix of our paper. Here are the settings for GPRGNN and APPNP:
 
-We choose random walk path lengths with K = 10 and use a 2-layer (MLP) with 64 hidden units for the NN component. For the GPR weights, we use different initializations including PPR with ![equation](http://www.sciweavers.org/upload/Tex2Img_1611352711/render.png), ![equation](http://www.sciweavers.org/upload/Tex2Img_1611352831/render.png) or ![equation](http://www.sciweavers.org/upload/Tex2Img_1611352861/render.png) and the default random initialization in pytorch. Similarly, for APPNP we search the optimal ![equation](http://www.sciweavers.org/upload/Tex2Img_1611352906/render.png). For other hyperparameter tuning, we optimize the learning rate over {0.002, 0.01, 0.05} and weight decay {0.0, 0.0005} for all models. 
+We choose random walk path lengths with K = 10 and use a 2-layer (MLP) with 64 hidden units for the NN component. For the GPR weights, we use different initializations including PPR with <img src="https://render.githubusercontent.com/render/math?math=\alpha\in\{0.1, 0.2, 0.5, 0.9\}">, <img src="https://render.githubusercontent.com/render/math?math=\gamma_k=\delta_{0k}"> or <img src="https://render.githubusercontent.com/render/math?math=\delta_{Kk}"> and the default random initialization in pytorch. Similarly, for APPNP we search the optimal <img src="https://render.githubusercontent.com/render/math?math=\alpha\in\{0.1, 0.2, 0.5, 0.9\}">. For other hyperparameter tuning, we optimize the learning rate over {0.002, 0.01, 0.05} and weight decay {0.0, 0.0005} for all models. 
+
+<!-- <img src="https://render.githubusercontent.com/render/math?math=\alpha\in\{0.1, 0.2, 0.5, 0.9\}">
+<img src="https://render.githubusercontent.com/render/math?math=\gamma_k=\delta_{0k}">
+<img src="https://render.githubusercontent.com/render/math?math=\delta_{Kk}"> -->
+
 
 # Citation
 Please cite our paper if you use this code in your own work:
