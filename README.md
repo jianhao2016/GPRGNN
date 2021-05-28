@@ -54,6 +54,18 @@ We choose random walk path lengths with K = 10 and use a 2-layer (MLP) with 64 h
 <img src="https://render.githubusercontent.com/render/math?math=\delta_{Kk}"> -->
 
 
+Here is a list of hyperparameters for your reference:
+
+- For cora and citeseer, choosing different alpha doesn't make big difference. So you can choose alpha = 0.1.
+- For pubmed, we choose lr = 0.05, alpha = 0.2, wd = 0.0005 and add dprate = 0.5 (dropout for GPR part).
+- For computers, we choose lr = 0.05, alpha = 0.5 and wd = 0.
+- For Photo, we choose lr = 0.01, alpha = 0.5 and wd = 0.
+- For chameleon, we choose lr = 0.05, alpha = 1, wd = 0 and dprate = 0.7.
+- For Actor, we choose lr = 0.01, alpha = 0.9, wd = 0.
+- For squirrel, we choose lr = 0.05, alpha = 0, wd = 0, dprate = 0.7.
+- For Texas, we choose lr = 0.05, alpha = 1, wd = 0.0005.
+- For Cornell, we choose lr = 0.05, alpha = 0.9, wd = 0.0005.
+
 # Citation
 Please cite our paper if you use this code in your own work:
 ```latex
