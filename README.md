@@ -14,7 +14,7 @@ The learnt GPR weights of the GPR-GNN on real world datasets. Cora is homophilic
 
 
 <p align="center">
-  <img src="https://github.com/jianhao2016/GPRGNN/blob/master/figs/Different_gammas.png" width="600">
+  <img src="https://github.com/jianhao2016/GPRGNN/blob/master/figs/Different_gamma_upated_H.png" width="600">
 </p>
 
 # Requirement:
