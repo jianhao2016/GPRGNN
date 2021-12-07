@@ -33,7 +33,7 @@ class GPR_prop(MessagePassing):
 
         assert Init in ['SGC', 'PPR', 'NPPR', 'Random', 'WS']
         if Init == 'SGC':
-            # SGC-like
+            # SGC-like, note that in this case, alpha has to be a integer. It means where the peak at when initializing GPR weights.
             TEMP = 0.0*np.ones(K+1)
             TEMP[alpha] = 1.0
         elif Init == 'PPR':
