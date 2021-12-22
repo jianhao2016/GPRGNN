@@ -15,8 +15,6 @@ from GNN_models import *
 import torch
 import torch.nn.functional as F
 from tqdm import tqdm
-import random
-import ipdb
 
 import numpy as np
 
@@ -49,7 +47,7 @@ def RunExp(args, dataset, data, Net, percls_trn, val_lb):
         return accs, preds, losses
 
     appnp_net = Net(dataset, args)
-    device = torch.device('cuda:1' if torch.cuda.is_available() else 'cpu')
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     permute_masks = random_planetoid_splits
     data = permute_masks(data, dataset.num_classes, percls_trn, val_lb)

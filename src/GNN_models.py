@@ -3,16 +3,10 @@
 # vim:fenc=utf-8
 
 import torch
-import random
-import ipdb
-import math
 import torch.nn.functional as F
-import os.path as osp
 import numpy as np
-import torch_geometric.transforms as T
 
 from torch_geometric.nn.conv.gcn_conv import gcn_norm
-from torch.autograd import Variable
 from torch.nn import Parameter
 from torch.nn import Linear
 from torch_geometric.nn import GATConv, GCNConv, ChebConv
