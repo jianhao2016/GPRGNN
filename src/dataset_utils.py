@@ -12,6 +12,8 @@ import torch_geometric.transforms as T
 from cSBM_dataset import dataset_ContextualSBM
 from torch_geometric.datasets import Planetoid
 from torch_geometric.datasets import Amazon
+from torch_geometric.datasets import WikipediaNetwork
+from torch_geometric.datasets import Actor
 from torch_sparse import coalesce
 from torch_geometric.data import InMemoryDataset, download_url, Data
 from torch_geometric.utils.undirected import to_undirected
@@ -207,9 +209,12 @@ def DataLoader(name):
         root_path = '../'
         path = osp.join(root_path, 'data', name)
         dataset = Amazon(path, name, T.NormalizeFeatures())
-    elif name in ['chameleon', 'film', 'squirrel']:
-        dataset = dataset_heterophily(
+    elif name in ['chameleon', 'squirrel']:
+        dataset = WikipediaNetwork(
             root='../data/', name=name, transform=T.NormalizeFeatures())
+    elif name in ['film']:
+        dataset = Actor(
+            root='../data/film', transform=T.NormalizeFeatures())
     elif name in ['texas', 'cornell']:
         dataset = WebKB(root='../data/',
                         name=name, transform=T.NormalizeFeatures())
