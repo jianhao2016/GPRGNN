@@ -210,8 +210,16 @@ def DataLoader(name):
         path = osp.join(root_path, 'data', name)
         dataset = Amazon(path, name, T.NormalizeFeatures())
     elif name in ['chameleon', 'squirrel']:
+        # use everything from "geom_gcn_preprocess=False" and
+        # only the node label y from "geom_gcn_preprocess=True"
         dataset = WikipediaNetwork(
-            root='../data/', name=name, transform=T.NormalizeFeatures())
+            root='../data/', name=name, geom_gcn_preprocess=False, transform=T.NormalizeFeatures())
+        preProcDs = WikipediaNetwork(
+            root='../data/', name=name, geom_gcn_preprocess=True, transform=T.NormalizeFeatures())
+        data = dataset[0]
+        data.y = preProcDs[0].y
+        return dataset, data
+
     elif name in ['film']:
         dataset = Actor(
             root='../data/film', transform=T.NormalizeFeatures())
@@ -221,4 +229,4 @@ def DataLoader(name):
     else:
         raise ValueError(f'dataset {name} not supported in dataloader')
 
-    return dataset
+    return dataset, dataset[0]

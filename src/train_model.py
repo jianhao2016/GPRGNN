@@ -154,8 +154,7 @@ if __name__ == '__main__':
         Net = GPRGNN
 
     dname = args.dataset
-    dataset = DataLoader(dname)
-    data = dataset[0]
+    dataset, data = DataLoader(dname)
 
     RPMAX = args.RPMAX
     Init = args.Init
