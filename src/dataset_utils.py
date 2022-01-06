@@ -162,39 +162,6 @@ class WebKB(InMemoryDataset):
 
 
 def DataLoader(name):
-    # assert name in ['cSBM_data_Aug_19_2020-13:06',
-    #                 'cSBM_data_Aug_18_2020-18:50',
-    #                 'cSBM_data_Aug_21_2020-10:06',
-    #                 'cSBM_data_Aug_19_2020-20:41',
-    #                 'cSBM_data_Aug_21_2020-11:04',
-    #                 'cSBM_data_Aug_21_2020-11:21',
-    #                 'cSBM_data_Sep_01_2020-14:15',
-    #                 'cSBM_data_Sep_01_2020-14:18',
-    #                 'cSBM_data_Sep_01_2020-14:19',
-    #                 'cSBM_data_Sep_01_2020-14:32',
-    #                 'cSBM_data_Sep_01_2020-14:22',
-    #                 'cSBM_data_Sep_01_2020-14:23',
-    #                 'cSBM_data_Sep_01_2020-14:27',
-    #                 'cSBM_data_Sep_01_2020-14:29',
-    #                 'Cora', 'Citeseer', 'PubMed',
-    #                 'Computers', 'Photo',
-    #                 'chameleon', 'film', 'squirrel',
-    #                 'Texas', 'Cornell']
-
-    # if name in ['cSBM_data_Aug_19_2020-13:06',
-    #             'cSBM_data_Aug_18_2020-18:50',
-    #             'cSBM_data_Aug_21_2020-10:06',
-    #             'cSBM_data_Aug_19_2020-20:41',
-    #             'cSBM_data_Aug_21_2020-11:04',
-    #             'cSBM_data_Aug_21_2020-11:21',
-    #             'cSBM_data_Sep_01_2020-14:15',
-    #             'cSBM_data_Sep_01_2020-14:18',
-    #             'cSBM_data_Sep_01_2020-14:19',
-    #             'cSBM_data_Sep_01_2020-14:32',
-    #             'cSBM_data_Sep_01_2020-14:22',
-    #             'cSBM_data_Sep_01_2020-14:23',
-    #             'cSBM_data_Sep_01_2020-14:27',
-    #             'cSBM_data_Sep_01_2020-14:29']:
     if 'cSBM_data' in name:
         path = '../data/'
         dataset = dataset_ContextualSBM(path, name=name)
@@ -212,12 +179,12 @@ def DataLoader(name):
     elif name in ['chameleon', 'squirrel']:
         # use everything from "geom_gcn_preprocess=False" and
         # only the node label y from "geom_gcn_preprocess=True"
-        dataset = WikipediaNetwork(
-            root='../data/', name=name, geom_gcn_preprocess=False, transform=T.NormalizeFeatures())
         preProcDs = WikipediaNetwork(
+            root='../data/', name=name, geom_gcn_preprocess=False, transform=T.NormalizeFeatures())
+        dataset = WikipediaNetwork(
             root='../data/', name=name, geom_gcn_preprocess=True, transform=T.NormalizeFeatures())
         data = dataset[0]
-        data.y = preProcDs[0].y
+        data.edge_index = preProcDs[0].edge_index
         return dataset, data
 
     elif name in ['film']:
