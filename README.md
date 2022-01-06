@@ -44,6 +44,8 @@ source create_cSBM_dataset.sh
  
 # Repreduce results in Table 2:
 
+**Update(01/06/2022):** We add the file `./src/Reproduce_GPRGNN.sh`, which can reproduce our results of GPRGNN in Table 2 by just running it! 
+
 To reproduce the results in Table 2 of [our paper](https://openreview.net/forum?id=n6jl7fLxrP) you need to first perform hyperparameter tuning. 
 For details of optimization of all models, please refer to section A.9 in Appendix of our paper. Here are the settings for GPRGNN and APPNP:
 
