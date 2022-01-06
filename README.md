@@ -1,6 +1,6 @@
 # GPRGNN
 
-This is the source code for our ICLR2021 paper: [Adaptive Universal Generalized PageRank Graph Neural Network](https://openreview.net/forum?id=n6jl7fLxrP).
+This is the source code for our ICLR2021 paper: [Adaptive Universal Generalized PageRank Graph Neural Network](https://openreview.net/forum?id=n6jl7fLxrP). (See also our [ArXiv version](https://arxiv.org/pdf/2006.07988.pdf) for the latest update on typos) 
 
 
 <p align="center">
