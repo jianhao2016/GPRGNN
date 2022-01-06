@@ -3,8 +3,6 @@
 # vim:fenc=utf-8
 
 import torch
-import math
-import numpy as np
 
 
 def index_to_mask(index, size):

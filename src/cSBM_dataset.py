@@ -23,7 +23,6 @@ from datetime import datetime
 from utils import random_planetoid_splits
 import os.path as osp
 import os
-import ipdb
 import argparse
 
 import torch
@@ -201,10 +200,10 @@ class dataset_ContextualSBM(InMemoryDataset):
         # overwrite the dataset attribute n, p, d, Lambda, mu
         self.Lambda = self.data.Lambda.item()
         self.mu = self.data.mu.item()
-        self.n = self.data.n.item()
-        self.p = self.data.p.item()
-        self.d = self.data.d.item()
-        self.train_percent = self.data.train_percent.item()
+        self.n = self.data.n
+        self.p = self.data.p
+        self.d = self.data.d
+        self.train_percent = self.data.train_percent
 
 #     @property
 #     def raw_dir(self):
