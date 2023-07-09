@@ -24,6 +24,7 @@ class GPR_prop(MessagePassing):
         self.K = K
         self.Init = Init
         self.alpha = alpha
+        self.Gamma = Gamma
 
         assert Init in ['SGC', 'PPR', 'NPPR', 'Random', 'WS']
         if Init == 'SGC':
@@ -51,9 +52,22 @@ class GPR_prop(MessagePassing):
 
     def reset_parameters(self):
         torch.nn.init.zeros_(self.temp)
-        for k in range(self.K+1):
-            self.temp.data[k] = self.alpha*(1-self.alpha)**k
-        self.temp.data[-1] = (1-self.alpha)**self.K
+        if self.Init == 'SGC':
+            self.temp.data[self.alpha]= 1.0
+        elif self.Init == 'PPR':
+            for k in range(self.K+1):
+                self.temp.data[k] = self.alpha*(1-self.alpha)**k
+            self.temp.data[-1] = (1-self.alpha)**self.K
+        elif self.Init == 'NPPR':
+            for k in range(self.K+1):
+                self.temp.data[k] = self.alpha**k
+            self.temp.data = self.temp.data/torch.sum(torch.abs(self.temp.data))
+        elif self.Init == 'Random':
+            bound = np.sqrt(3/(self.K+1))
+            torch.nn.init.uniform_(self.temp,-bound,bound)
+            self.temp.data = self.temp.data/torch.sum(torch.abs(self.temp.data))
+        elif self.Init == 'WS':
+            self.temp.data = self.Gamma
 
     def forward(self, x, edge_index, edge_weight=None):
         edge_index, norm = gcn_norm(
